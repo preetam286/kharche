@@ -1,0 +1,54 @@
+.expense-history {
+}
+
+.expense-history__title {
+  @apply text-lg font-semibold mb-4;
+}
+
+.expense-history__empty {
+  @apply text-gray-400 text-sm;
+}
+
+.expense-history__table-wrapper {
+  @apply overflow-x-auto;
+}
+
+.expense-history__table {
+  @apply w-full text-sm text-left;
+}
+
+.expense-history__header {
+  @apply text-xs text-gray-500 uppercase bg-gray-50;
+}
+
+.expense-history__header th {
+  @apply px-4 py-3;
+}
+
+.expense-history__row {
+  @apply border-b hover:bg-gray-50 transition-colors;
+}
+
+.expense-history__cell {
+  @apply px-4 py-3;
+}
+
+.expense-history__cell--desc {
+  @apply font-medium;
+}
+
+.expense-history__cell--split {
+  @apply text-xs text-gray-600;
+}
+
+.expense-history__cell--actions {
+  @apply text-center;
+}
+
+.expense-history__edit-btn {
+  @apply text-blue-500 hover:text-blue-700 transition-colors mr-2;
+}
+
+.expense-history__delete-btn {
+  @apply text-red-500 hover:text-red-700 transition-colors;
+}

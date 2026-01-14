@@ -1,0 +1,39 @@
+.settlement {
+  @apply bg-slate-900 text-white p-6 rounded-xl shadow-lg;
+}
+
+.settlement__title {
+  @apply text-xl font-bold mb-4 border-b border-slate-700 pb-2;
+}
+
+.settlement__empty {
+  @apply text-slate-400 italic;
+}
+
+.settlement__list {
+  @apply space-y-3;
+}
+
+.settlement__item {
+  @apply flex items-center justify-between bg-slate-800 p-3 rounded-lg;
+}
+
+.settlement__info {
+  @apply flex items-center gap-2;
+}
+
+.settlement__from {
+  @apply font-bold text-red-300;
+}
+
+.settlement__label {
+  @apply text-slate-400 text-sm;
+}
+
+.settlement__to {
+  @apply font-bold text-green-300;
+}
+
+.settlement__amount {
+  @apply font-mono text-xl text-yellow-400;
+}

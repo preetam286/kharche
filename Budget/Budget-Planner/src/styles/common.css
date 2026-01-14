@@ -1,0 +1,22 @@
+/* Global Card Styles */
+.card {
+  @apply bg-white p-6 rounded-xl shadow-sm border border-gray-100;
+}
+
+/* Form Styles */
+.form-group {
+  @apply space-y-2;
+}
+
+.form-label {
+  @apply block text-xs font-bold text-gray-500 uppercase;
+}
+
+.form-input {
+  @apply w-full border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+/* Icon Styles */
+.icon-inline {
+  @apply inline-block mr-2;
+}

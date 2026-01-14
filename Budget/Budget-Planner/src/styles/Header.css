@@ -1,0 +1,11 @@
+.header {
+  @apply flex items-center space-x-2 mb-8;
+}
+
+.header__icon-wrapper {
+  @apply bg-blue-600 p-2 rounded-lg text-white;
+}
+
+.header__title {
+  @apply text-2xl font-bold;
+}

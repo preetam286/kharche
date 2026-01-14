@@ -1,0 +1,65 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.modal-content {
+  @apply bg-white rounded-xl shadow-lg max-w-md w-full mx-4 border border-gray-100;
+}
+
+.modal-header {
+  @apply flex items-center justify-between p-6 border-b border-gray-100;
+}
+
+.modal-header h2 {
+  @apply text-lg font-bold text-gray-800;
+}
+
+.modal-close {
+  @apply text-gray-400 hover:text-gray-600 transition-colors cursor-pointer;
+}
+
+.modal-body {
+  @apply p-6 space-y-4 max-h-[calc(100vh-300px)] overflow-y-auto;
+}
+
+.modal-row {
+  @apply grid grid-cols-2 gap-4;
+}
+
+.modal-checkboxes {
+  @apply grid grid-cols-3 gap-3;
+}
+
+.modal-footer {
+  @apply flex gap-3 p-6 border-t border-gray-100;
+}
+
+.modal-footer button {
+  @apply flex-1 py-2 rounded-lg font-medium transition-colors;
+}
+
+.modal-footer .btn-primary {
+  @apply bg-blue-600 text-white hover:bg-blue-700;
+}
+
+.modal-footer .btn-secondary {
+  @apply bg-gray-100 text-gray-800 hover:bg-gray-200;
+}
+
+.error-text {
+  @apply text-red-500 text-xs mt-1 block;
+}
+
+/* Prevent body scroll when modal is open */
+body.modal-open {
+  overflow: hidden;
+}

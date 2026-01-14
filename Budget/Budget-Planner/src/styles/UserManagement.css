@@ -1,0 +1,38 @@
+.user-management {
+}
+
+.user-management__header {
+  @apply flex items-center justify-between mb-4;
+}
+
+.user-management__title {
+  @apply text-lg font-semibold flex items-center;
+}
+
+.user-management__count {
+  @apply text-sm text-gray-500;
+}
+
+.user-management__list {
+  @apply space-y-3 mb-4;
+}
+
+.user-management__item {
+  @apply flex justify-between items-center bg-gray-50 p-2 rounded px-3;
+}
+
+.user-management__remove-btn {
+  @apply text-red-400 hover:text-red-600 transition-colors;
+}
+
+.user-management__form {
+  @apply flex gap-2;
+}
+
+.user-management__input {
+  @apply flex-1 border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+.user-management__button {
+  @apply bg-blue-600 text-white p-2 rounded-lg hover:bg-blue-700 transition-colors;
+}
