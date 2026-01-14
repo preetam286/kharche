@@ -19,7 +19,6 @@ build/
 
 # macOS
 .DS_Store
-.DS_Strore
 
 # Logs
 npm-debug.log*
