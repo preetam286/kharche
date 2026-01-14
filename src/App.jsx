@@ -11,11 +11,7 @@ import { useExpenseState } from './hooks/useExpenseState';
 import { calculateSettlements } from './utils/settlementCalculator';
 
 const ExpenseSplitter = () => {
-  const initialUsers = [
-    { id: 1, name: 'Alice' },
-    { id: 2, name: 'Bob' },
-    { id: 3, name: 'Charlie' },
-  ];
+  const initialUsers = [];
 
   const {
     users,
