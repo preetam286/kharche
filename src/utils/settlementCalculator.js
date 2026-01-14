@@ -9,21 +9,24 @@ export const calculateSettlements = (users, expenses) => {
   users.forEach((u) => (balances[u.id] = 0));
 
   // 1. Calculate Net Balance
-  expenses.forEach((exp) => {
-    const splitAmount = exp.amount / exp.involved.length;
+  for (const exp of expenses) {
+    const involvedList = Array.isArray(exp.involved) ? exp.involved : [];
+    // Only consider involved users that actually exist in balances
+    const validInvolved = involvedList.filter((userId) => balances[userId] !== undefined);
+    if (validInvolved.length === 0) continue;
 
-    // Payer gets positive (they are owed money)
+    const splitAmount = exp.amount / validInvolved.length;
+
+    // Payer gets positive (they are owed money) if payer exists
     if (balances[exp.payer] !== undefined) {
       balances[exp.payer] += exp.amount;
     }
 
     // Involved people get negative (they owe money)
-    exp.involved.forEach((userId) => {
-      if (balances[userId] !== undefined) {
-        balances[userId] -= splitAmount;
-      }
+    validInvolved.forEach((userId) => {
+      balances[userId] -= splitAmount;
     });
-  });
+  }
 
   // 2. Separate into Debtors and Creditors
   let debtors = [];

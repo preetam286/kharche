@@ -33,6 +33,7 @@ const ExpenseSplitter = () => {
     removeExpense,
     toggleInvolved,
     updateExpense,
+    resetState,
   } = useExpenseState(initialUsers);
 
   const settlements = calculateSettlements(users, expenses);
@@ -41,11 +42,12 @@ const ExpenseSplitter = () => {
   return (
     <div className="app">
       <div className="app__container">
-        <Header />
+        <Header onResetAll={resetState} />
 
         <div className="app__grid">
           <UserManagement
             users={users}
+            expenses={expenses}
             newUserName={newUserName}
             onNewUserNameChange={setNewUserName}
             onAddUser={addUser}

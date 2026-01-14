@@ -1,0 +1,35 @@
+.confirm-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 60;
+}
+
+.confirm-card {
+  @apply bg-white p-6 rounded-lg shadow-lg w-11/12 max-w-md;
+}
+
+.confirm-title {
+  @apply text-lg font-semibold mb-2;
+}
+
+.confirm-message {
+  @apply text-sm mb-4;
+}
+
+.confirm-actions {
+  @apply flex justify-end gap-3;
+}
+
+.btn {
+  @apply px-3 py-1 rounded;
+}
+.btn-secondary {
+  @apply bg-gray-200;
+}
+.btn-danger {
+  @apply bg-red-500 text-white;
+}
