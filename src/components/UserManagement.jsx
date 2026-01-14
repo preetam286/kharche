@@ -1,8 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Users, X, UserPlus } from 'lucide-react';
+import ConfirmModal from './ConfirmModal';
 import '../styles/UserManagement.css';
 
-const UserManagement = ({ users, newUserName, onNewUserNameChange, onAddUser, onRemoveUser }) => {
+const UserManagement = ({ users, expenses = [], newUserName, onNewUserNameChange, onAddUser, onRemoveUser }) => {
+  const [pendingRemove, setPendingRemove] = useState(null);
+
+  const handleRemoveClick = (user) => {
+    // compute number of affected expenses
+    const affected = expenses.filter((exp) => exp.involved.includes(user.id) || exp.payer === user.id).length;
+    setPendingRemove({ user, affected });
+  };
+
+  const confirmRemove = () => {
+    if (pendingRemove) {
+      onRemoveUser(pendingRemove.user.id);
+      setPendingRemove(null);
+    }
+  };
+
   return (
     <div className="user-management card">
       <div className="user-management__header">
@@ -16,7 +32,7 @@ const UserManagement = ({ users, newUserName, onNewUserNameChange, onAddUser, on
         {users.map((u) => (
           <div key={u.id} className="user-management__item">
             <span>{u.name}</span>
-            <button onClick={() => onRemoveUser(u.id)} className="user-management__remove-btn">
+            <button onClick={() => handleRemoveClick(u)} className="user-management__remove-btn">
               <X size={16} />
             </button>
           </div>
@@ -35,6 +51,19 @@ const UserManagement = ({ users, newUserName, onNewUserNameChange, onAddUser, on
           <UserPlus size={20} />
         </button>
       </form>
+
+      {pendingRemove && (
+        <ConfirmModal
+          title={`Remove ${pendingRemove.user.name}`}
+          message={
+            pendingRemove.affected > 0
+              ? `${pendingRemove.user.name} is referenced in ${pendingRemove.affected} expense(s). Removing will update those expenses. Continue?`
+              : `Remove ${pendingRemove.user.name}?`
+          }
+          onCancel={() => setPendingRemove(null)}
+          onConfirm={confirmRemove}
+        />
+      )}
     </div>
   );
 };

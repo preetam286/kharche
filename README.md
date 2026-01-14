@@ -42,7 +42,7 @@ src/
 
 ## Overview
 
-Small, modular React app for splitting group expenses. Components are organized under `src/` with separate style files and a single hook for state.
+Small, modular React app for splitting group expenses. Components are organized under `src/` with separate style files and a single hook for state
 
 ## Directory layout
 
