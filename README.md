@@ -1,5 +1,8 @@
 # Budget Planner - Project Structure
 
+[![Coverage Status](https://codecov.io/gh/preetam286/kharche/branch/main/graph/badge.svg)](https://codecov.io/gh/preetam286/kharche)
+
+
 ## Overview
 
 The project has been refactored into a clean, modular component-based architecture with separated CSS files.
@@ -101,17 +104,37 @@ src/
 ## Running the project
 
 ```bash
-# Install
+# Install dependencies
 npm install
 
-# Dev server
+# Start dev server
 npm run dev
 
-# Build
+# Build for production
 npm run build
 
 # Lint
 npm run lint
+
+## Tests
+
+Unit and integration tests use Vitest and Testing Library. Run:
+
+```bash
+npm test
+```
+
+To run tests in watch mode:
+
+```bash
+npm run test:watch
+```
+
+Manual test scripts are available under the `test/scripts/` folder for quick ad-hoc checks.
+
+## CI
+
+A GitHub Actions workflow is included at `.github/workflows/ci.yml` to run tests on push and pull requests.
 ```
 
 ## Notes
